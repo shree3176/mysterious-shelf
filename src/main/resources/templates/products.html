@@ -6,15 +6,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>CRUD Example (Home Inventory) with Spring Boot, HSQLDB and VueJS</title>
+    <link rel="shortcut icon" href="shree.png" type="image/x-icon">
+    <link rel="icon" href="shree.png" type="image/x-icon">
     <link href="https://unpkg.com/bootstrap@3.4.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/products.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container">
-    <h2 align="center"> Home Inventory :)</h2>
-    <main id="app">
-        <router-view></router-view>
-    </main>
+    <div class="row">
+        <div class="col-md-8">
+             <h2 align="center"> Home Inventory :) </h2>
+                    <main id="app">
+                        <router-view></router-view>
+                    </main>
+        </div>
+        <div class="col-md-4 sidebar-bg" style="background: #eee; margin-top: 30px; ">
+        <div id="sidebar">
+            <h3>About Me</h3>
+            <img style="float: right; margin: 0px 8px 8px 0px; padding: 4px; border: 1px solid #ccc;" src="shree.png">
+            <p>Hey 👋!</p>
+            <p>This is Shri, a human being 😎, gardener 💐 and nature lover 🌳, currently living in Pune, Maharashtra.</p>
+            <p>You can also find me on <a href="https://www.facebook.com/shri.050">Facebook</a>,
+                <a href="https://www.linkedin.com/in/bhagyashri-bharat ">LinkedIn</a>, <a href="GitHub.com/shree3176 ">Github</a> and <a href="https://twitter.com/ShreeBhaarat?s=09">Twitter</a>.</p>
+            <p>Thank you for visiting! 😉</p>
+        </div>
+    </div>
+
 </div>
 
 <template id="product">

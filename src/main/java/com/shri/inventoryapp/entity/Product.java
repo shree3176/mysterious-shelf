@@ -1,4 +1,4 @@
-package com.shri.inventoryapp.restful.product;
+package com.shri.inventoryapp.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -24,6 +24,10 @@ public class Product {
     private String description;
 
     private BigDecimal price;
+
+    private Date mfgDate;
+
+    private Date expiryDate;
 
     @CreationTimestamp
     private Date createdAt;

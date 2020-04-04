@@ -1,5 +1,6 @@
 package com.shri.inventoryapp.restful.product;
 
+import com.shri.inventoryapp.entity.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

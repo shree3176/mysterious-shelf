@@ -17,7 +17,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.shri.inventoryapp.api"))
-                .paths(regex("/api/v1/products.*"))
+                .paths(regex("/api/v1/.*"))
                 .build();
     }
 

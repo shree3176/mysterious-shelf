@@ -1,5 +1,6 @@
 package com.shri.inventoryapp.entity;
 
+import com.shri.inventoryapp.EmployeeType;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -19,7 +20,10 @@ public class Employee {
 
     private String lastName;
 
-    private Integer phoneNo;
+    private Long phoneNo;
 
     private String address;
+
+    private EmployeeType employeeType;
+
 }

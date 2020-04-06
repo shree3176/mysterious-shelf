@@ -1,12 +1,15 @@
-package com.shri.inventoryapp.restful.product;
+package com.shri.inventoryapp.api;
 
 import com.shri.inventoryapp.entity.Product;
+import com.shri.inventoryapp.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,9 +27,14 @@ public class ProductAPI {
         return ResponseEntity.ok(productService.findAll());
     }
 
-    @PostMapping
+    @PostMapping("/product")
     public ResponseEntity create(@Validated @RequestBody Product product) {
-        return ResponseEntity.ok(productService.save(product));
+        Product savedStudent = productService.save(product);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(savedStudent.getId()).toUri();
+
+        return ResponseEntity.created(location).build();
     }
 
     @GetMapping("/{id}")
